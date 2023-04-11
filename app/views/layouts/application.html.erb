@@ -13,6 +13,9 @@
   <body>
     <header>
       <% if user_signed_in? %>
+        <h4>
+          <%= link_to "Bookers", root_path %>
+        </h4>
         <li>
           <%= link_to "Home", user_path(current_user.id) %>
         </li>
@@ -26,6 +29,9 @@
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
+        <h4>
+          <%= link_to "Bookers", root_path %>
+        </h4>
         <li>
           <%= link_to "Home", root_path %>
         </li>
@@ -41,5 +47,8 @@
       <% end %>
     </header>
     <%= yield %>
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
   </body>
 </html>
