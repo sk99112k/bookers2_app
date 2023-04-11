@@ -1,4 +1,13 @@
 <h1>User info</h1>
+<p><%= image_tag current_user.get_image %></p>
+  <div>
+    <p>name</p>
+    <p><%= current_user.name %></p>
+  </div>
+  <div>
+    <p>introduction</p>
+    <p><%= current_user.introduction %></p>
+  </div>
 
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
