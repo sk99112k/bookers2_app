@@ -7,6 +7,7 @@
   <div>
     <p>introduction</p>
     <p><%= current_user.introduction %></p>
+    <p><%= link_to '更新画面', edit_user_path(current_user.id) %></p>
   </div>
 
   <h1>New book</h1>

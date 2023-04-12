@@ -17,6 +17,7 @@
   <div>
     <p>introduction</p>
     <p><%= @book.user.introduction %></p>
+    <p><%= link_to '更新画面', edit_user_path(current_user.id) %></p>
   </div>
 
 <h1>New book</h1>
@@ -39,7 +40,7 @@
       <td><%= @book.body %></td>
     <% if @book.user == current_user %>
       <td><%= link_to 'Edit', edit_user_path %></td>
-      <td><%= link_to 'Destroy', destroy_book_path(current_user.@book), method: :delete, "date-confirm" => "本当に消しますか？" %></td>
+      <td><%= link_to 'Destroy', book_path(@book), method: :delete, "date-confirm" => "本当に消しますか？" %></td>
     <% end %>
     </tr>
   </tbody>
