@@ -1,14 +1,14 @@
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this obj from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-
     <div>
       <%= flash[:notice] %>
     </div>
     <div>
       <%= flash[:success] %>
     </div>
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
 
       <li><%= message %></li>
     <% end %>
@@ -43,6 +43,7 @@
     <tr>
       <th>Title</th>
       <th>Opinion</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
     <% @books.each do |book| %>
