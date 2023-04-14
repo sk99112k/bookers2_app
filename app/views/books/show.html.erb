@@ -54,8 +54,8 @@
   <table class="table">
     <tbody>
     <tr>
-      <td><%= image_tag @book.user.get_image %></td>
-      <td><%= link_to @book.user.name , user_path %></td>
+      <td><%= image_tag @book.user.get_image %><br>
+      <%= link_to @book.user.name , user_path %></td>
       <td><%= link_to @book.title , book_path(@book.id) %></td>
       <td><%= @book.body %></td>
     <% if @book.user == current_user %>

@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-md-3">
       <h1>User info</h1>
-      <p><%= image_tag current_user.get_image %></p>
+      <p><%= profile_image_tag current_user.get_image %></p>
 
 
   <table class="table">
@@ -66,7 +66,7 @@
     <% @books.each do |book| %>
   <tbody>
     <tr>
-      <td><%= image_tag book.user.get_image %></td>
+      <td><%= profile_image_tag book.user.get_image %></td>
       <td><%= link_to book.title , book_path(book.id) %></td>
       <td><%= book.body %></td>
     <% end %>
