@@ -13,10 +13,10 @@ Rails.application.routes.draw do
     resources :book_comments, only:[:create,:destroy]
   end
   resources :users, only: [:show,:index,:edit,:update] do
-    member do
+    resource :relationships, only: [:create,:destroy]
+       member do
       get :follower, :followed
     end
-    resource :relationships, only: [:create,:destroy]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
