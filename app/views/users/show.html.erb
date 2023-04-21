@@ -7,8 +7,9 @@
   <div class="row">
     <div class="col-md-3">
       <h1>User info</h1>
-      <%= render 'books/info', current_user: @user %>
-              
+      <%= render 'books/info', user: @user %>
+      
+      
       <h1 class="mt-3">New book</h1>
       <%= render 'form', book: @book %>
     </div>
