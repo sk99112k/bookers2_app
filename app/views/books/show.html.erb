@@ -21,7 +21,7 @@
           <tr>
             <td>
             <%= link_to user_path(@book.user_id) do %>
-              <%= image_tag @book.user.get_profile_image(50,50) %><br>
+              <%= image_tag @book.user.get_profile_image(100,100) %><br>
               <%= @book.user.name %>
             <% end %>
             </td>
@@ -43,7 +43,7 @@
               ♡ <%= @book.favorites.count %>
               <% end %>
             </td>
-              <% end %>
+            <% end %>
             <td>
               コメント件数:<%= @book.book_comments.count %>
             </td>
@@ -52,7 +52,7 @@
         <% @book.book_comments.each do |book_comment| %>
         <table class="table">
           <td>
-            <%= image_tag book_comment.user.get_profile_image(30,30) %><br>
+            <%= image_tag book_comment.user.get_profile_image(50,50) %><br>
             <%= book_comment.user.name %>
           </td>
           <td>
