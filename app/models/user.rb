@@ -37,5 +37,19 @@ class User < ApplicationRecord
   def follow?(user)
     followers.include?(user)
   end
+  
+  def self.looks(search,word)
+    if serach == perfect_match
+      @user = User.where("name LIKE?", "#{word}") 
+    elsif serach == forward_match
+      @user = User.where("name LIkE?", "#{word}%")
+    elsif search == backward_match
+      @user = User.where("name LIkE?", "%#{word}")
+    elsif search == portial_match
+      @user = User.where("name LIKE?", "%#{word}%")
+    else
+      @user = User.all
+    end 
+  end
 
 end
