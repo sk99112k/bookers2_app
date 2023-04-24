@@ -2,10 +2,12 @@ class SearchesController < ApplicationController
 
   def search
     @range = params[:range]
+    @search = params[:search]
+    @word = params[:word]
     if @range == "Book"
-      @books = Book.looks(params[:search],params[:word])
+      @books = Book.search_for(@search, @word)
     else
-      @users = User.looks(params[:search],params[:word])
+      @users = User.search_for(@search, @word)
     end
   end
 
