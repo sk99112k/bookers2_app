@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   before_action :authenticate_user!
 
-  def search
+  def search_list
     @range = params[:range]
     @search = params[:search]
     @word = params[:word]
@@ -11,5 +11,4 @@ class SearchesController < ApplicationController
       @users = User.search_for(@search, @word)
     end
   end
-
 end

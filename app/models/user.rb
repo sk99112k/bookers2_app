@@ -39,14 +39,14 @@ class User < ApplicationRecord
   end
 
   def self.search_for(search,word)
-    if serach == 'perfect'
-      User.where(name: search)
-    elsif serach == 'forward'
-      User.where("name LIkE ?", search + "%")
+    if search == 'perfect'
+      User.where(name: word)
+    elsif search == 'forward'
+      User.where('name LIkE ?', word + '%')
     elsif search == 'backward'
-      User.where("name LIkE ?", "%" + search)
+      User.where('name LIkE ?', '%' + word)
     else
-      User.where("name LIKE ?", "%" + search + "%")
+      User.where('name LIKE ?', '%' + word + '%')
     end
   end
 

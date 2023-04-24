@@ -11,14 +11,14 @@ class Book < ApplicationRecord
   end
 
   def self.search_for(search,word)
-    if serach == 'perfect'
-      Book.where(title: search)
-    elsif serach == 'forward'
-      Book.where("name LIkE ?", search + "%")
+    if search == 'perfect'
+      Book.where(title: word)
+    elsif search == 'forward'
+      Book.where('name LIkE ?', word + '%')
     elsif search == 'backward'
-      Book.where("name LIkE ?", "%" + search)
+      Book.where('name LIkE ?', '%' + word)
     else
-      Book.where("name LIKE ?", "%" + search + "%")
+      Book.where('name LIKE ?', '%' + word + '%')
     end
   end
 
