@@ -1,11 +1,13 @@
 class BookCommentsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def create
-    book = Book.find(params[:book_id])
-    comment = current_user.book_comments.new(book_comment_params)
-    comment.book_id = book.id
-    comment.save
+    @book = Book.find(params[:book_id])
+    @comment = current_user.book_comments.new(book_comment_params)
+    @comment.book_id = @book.id
+    unless @comment.save
+      render 'error'
+    end
     #redirect_to request.referer
   end
 
