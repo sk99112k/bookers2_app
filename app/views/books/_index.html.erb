@@ -17,7 +17,7 @@
       <td><%= link_to book_path(book.id) do %><%= book.title %><% end %></td>
       <td><%= book.body %></td>
       <td class="favorite-btn">
-        <%= render 'favorites/favorite-btn' %>
+        <%= render 'favorites/favorite-btn', book: book %>
       </td>
       <td class="comments-count">
         コメント件数:<%= book.book_comments.count %>
