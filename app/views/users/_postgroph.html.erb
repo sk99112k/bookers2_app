@@ -23,18 +23,3 @@
   </tbody>
 </table>
 <%= line_chart graph_data, min: 0, max: 10 %>
-<%= form_with model:book do |f| %>
-<%= f.submit class: "btn btn-success" %>
-<h4>検索結果</h4>
-<table>
-  <thead>
-    <tr>
-      <th>投稿数</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= %></td>
-    </tr>
-  </tbody>
-</table>
