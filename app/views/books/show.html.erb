@@ -39,7 +39,7 @@
             </td>
           </tr>
         </table>
-        <table class="book_comments">
+        <table class="table book_comments">
           <%= render 'book_comments/comment-btn', book: @book %>
         </table>
         <%= form_with model: [@book, @book_comment], local: false do |f| %>
