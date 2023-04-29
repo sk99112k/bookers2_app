@@ -10,6 +10,16 @@ class UsersController < ApplicationController
     @yesterday_books = @books.created_yesterday
     @this_week_books = @books.created_this_week
     @last_week_books = @books.created_last_week
+
+    @graph_data = {
+  	  "6日前" => @books.created_6day_ago.count,
+  	  "5日前" => @books.created_5day_ago.count,
+  	  "4日前" => @books.created_4day_ago.count,
+  	  "3日前" => @books.created_3day_ago.count,
+  	  "2日前" => @books.created_2day_ago.count,
+  	  "昨日" => @books.created_yesterday.count,
+  	  "今日" => @books.created_today.count
+    }
   end
 
   def index

@@ -17,7 +17,7 @@
       <h3>投稿数の前日比・前週比</h3>
       <%= render 'users/postratio', today_books: @today_books, yesterday_books: @yesterday_books, the_day_before: @the_day_before, this_week_books: @this_week_books, last_week_books: @last_week_books, the_week_before: @the_week_before %>
       <h3>７日間分の投稿数</h3>
-      <%= render 'postgroph', books: @books %>
+      <%= render 'postgroph', books: @books, graph_data: @graph_data %>
     </div>
   </div>
 </div>
