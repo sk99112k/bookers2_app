@@ -14,38 +14,10 @@
     <div class="col-md-8 offset-md-1">
       <h1>Books</h1>
       <%= render 'books/index', books: @books %>
-    </div>
-
-    <div class="post-ratio">
       <h3>投稿数の前日比・前週比</h3>
       <%= render 'users/postratio', today_books: @today_books, yesterday_books: @yesterday_books, the_day_before: @the_day_before, this_week_books: @this_week_books, last_week_books: @last_week_books, the_week_before: @the_week_before %>
-    </div>
-    <div class="post-graph">
       <h3>７日間分の投稿数</h3>
-      <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>6日前</th>
-      <th>5日前</th>
-      <th>4日前</th>
-      <th>3日前</th>
-      <th>2日前</th>
-      <th>昨日</th>
-      <th>今日</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= this_week_books.count %></td>
-      <td><%= days_5ago_books.count %></td>
-      <td><%= days_4ago_books.count %></td>
-      <td><%= days_3ago_books.count %></td>
-      <td><%= days_2ago_books.count %></td>
-      <td><%= yesterday_books.count %></td>
-      <td><%= today_books.count %></td>
-    </tr>
-  </tbody>
-</table>
+      <%= render 'postgroph', books: @books %>
     </div>
   </div>
 </div>

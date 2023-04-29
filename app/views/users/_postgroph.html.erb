@@ -12,13 +12,13 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= this_week_books.count %></td>
-      <td><%= days_5ago_books.count %></td>
-      <td><%= days_4ago_books.count %></td>
-      <td><%= days_3ago_books.count %></td>
-      <td><%= days_2ago_books.count %></td>
-      <td><%= yesterday_books.count %></td>
-      <td><%= today_books.count %></td>
+      <td><%= books.created_6day_ago.count %></td>
+      <td><%= books.created_5day_ago.count %></td>
+      <td><%= books.created_4day_ago.count %></td>
+      <td><%= books.created_3day_ago.count %></td>
+      <td><%= books.created_2day_ago.count %></td>
+      <td><%= books.created_yesterday.count %></td>
+      <td><%= books.created_today.count %></td>
     </tr>
   </tbody>
 </table>
