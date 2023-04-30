@@ -1,0 +1,27 @@
+<div class="date">
+  <%= form_with url: user_path(user), method: :get, class: "row justify-content-center" do |f| %>
+    <div class="col-auto">
+      <%= f.date_field :created_at, class: "form-control" %>
+    </div>
+    <div class="col-auto">
+      <%= f.submit "検索" , class: "btn btn-warning"%>
+    </div>
+  <% end %>
+</div>
+
+<% if !create_at_books.nil? %>
+  <div id="daily_posts">
+    <table class=" table table-warning">
+      <thead>
+        <tr>
+          <th>投稿数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><%= create_at_books.count %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>

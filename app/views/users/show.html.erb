@@ -12,6 +12,8 @@
       <%= render 'form', book: @book %>
     </div>
     <div class="col-md-8 offset-md-1">
+      <!--指定した日の記録の検索-->
+      <%= render 'daily_posts', user: @user, create_at_books: @create_at_books %>
       <h1>Books</h1>
       <%= render 'books/index', books: @books %>
       <h3>投稿数の前日比・前週比</h3>

@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @yesterday_books = @books.created_yesterday
     @this_week_books = @books.created_this_week
     @last_week_books = @books.created_last_week
-
     @graph_data = {
   	  "6日前" => @books.created_6day_ago.count,
   	  "5日前" => @books.created_5day_ago.count,
@@ -20,6 +19,11 @@ class UsersController < ApplicationController
   	  "昨日" => @books.created_yesterday.count,
   	  "今日" => @books.created_today.count
     }
+    if params[:created_at].present?
+      @create_at_books = @books.where(created_at: params[:created_at].in_time_zone.all_day)
+    else
+      @create_at_books = nil
+    end
   end
 
   def index
