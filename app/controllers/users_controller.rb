@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   	  "今日" => @books.created_today.count
     }
     if params[:created_at].present?
+      # present、存在の有無
       @create_at_books = @books.where(created_at: params[:created_at].in_time_zone.all_day)
     else
       @create_at_books = nil
