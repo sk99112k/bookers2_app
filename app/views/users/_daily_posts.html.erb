@@ -1,5 +1,5 @@
-<div class="date">
-  <%= form_with url: user_path(user), method: :get, class: "row justify-content-center" do |f| %>
+<div id="day">
+  <%= form_with url: user_path(user), method: :get, class: "row justify-content-center", local: false do |f| %>
     <div class="col-auto">
       <%= f.date_field :created_at, class: "form-control" %>
     </div>
@@ -8,21 +8,17 @@
     </div>
   <% end %>
 </div>
-
-<% if !create_at_books.nil? %>
-<!--create_at_booksが空じゃなかったら-->
-  <div id="daily_posts">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>投稿数</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th><%= create_at_books.count %></th>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-<% end %>
+  <% if !create_at_books.nil? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>投稿数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><%= create_at_books.count %></th>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
